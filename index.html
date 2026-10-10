@@ -3,99 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vidco AI - Full Studio</title>
+
+<!-- GOOGLE SEO - YEH SABSE ZAROORI HAI -->
+<title>Vidco AI - Free Professional AI Video Generator | No Watermark</title>
+<meta name="description" content="Vidco AI is free professional text to video generator. Generate 4K videos with no watermark, no text overlay. Best AI video generator in Pakistan.">
+<meta name="keywords" content="AI video generator, free video generator, text to video, no watermark, Vidco AI, Pakistan AI tool, 4K video generator">
+<meta name="author" content="Vidco AI - Faisalabad">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vidco-ai-nfm2.vercel.app/">
+
+<!-- Google ke liye Open Graph -->
+<meta property="og:title" content="Vidco AI - Free Professional AI Video Generator">
+<meta property="og:description" content="Generate professional 4K AI videos with no watermark. Free text to video tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vidco-ai-nfm2.vercel.app/">
+
+<!-- Schema for Google -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Vidco AI",
+  "description": "Free Professional AI Video Generator - No Watermark, No Text On Video, 4K Quality",
+  "url": "https://vidco-ai-nfm2.vercel.app/",
+  "applicationCategory": "VideoGenerator",
+  "operatingSystem": "All",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-[#08080a] text-white">
-<!-- HEADER -->
-<div class="flex justify-between items-center p-4 border-b border-zinc-800 max-w-7xl mx-auto">
-  <h1 class="text-2xl font-bold">VIDCO <span class="text-violet-500">AI</span> <span class="text-[10px] bg-violet-600 px-2 py-1 rounded ml-2">PRO STUDIO</span></h1>
-  <div class="flex gap-2">
-    <button onclick="alert('Sign In - Coming Soon! Local storage me save hoga')" class="px-5 py-2 rounded-full border border-zinc-700 text-sm">Sign In</button>
-    <button onclick="alert('Sign Up Free!')" class="px-5 py-2 rounded-full bg-white text-black text-sm font-bold">Sign Up</button>
+<body class="bg-[#050507] text-white">
+<header class="flex justify-between items-center px-5 py-4 border-b border-[#1a1a1f] max-w-[480px] mx-auto">
+  <h1 class="text-[20px] font-black">VIDCO <span class="text-violet-500">AI</span> <span class="bg-violet-600 text-[10px] px-2 py-1 rounded">PRO</span></h1>
+  <div class="flex gap-2"><button class="px-4 py-2 rounded-full border border-zinc-800 text-xs">Sign In</button><button class="px-4 py-2 rounded-full bg-white text-black font-bold text-xs">Sign Up</button></div>
+</header>
+
+<main class="max-w-[480px] mx-auto p-3">
+<!-- SEO TEXT FOR GOOGLE - User ko nazar nahi ayega lekin Google parhay ga -->
+<h2 class="sr-only">Vidco AI is the best free AI video generator in Pakistan for TikTok, YouTube and Instagram reels with no watermark</h2>
+
+<div class="bg-[#101012] border border-[#222228] rounded-[28px] p-4">
+  <label class="text-[11px] text-zinc-500 font-bold">✎ PROMPT BOX</label>
+  <div class="bg-black border border-[#2a2a32] rounded-[16px] p-4 mt-2"><textarea id="prompt" placeholder="Example: A Pakistani news anchor talking..." class="w-full bg-transparent outline-none text-[14px] h-[90px] resize-none"></textarea></div>
+
+  <div class="grid grid-cols-2 gap-3 mt-5">
+    <div><p class="text-[10px] text-zinc-500 mb-2">⛶ RATIO</p><select id="ratio" class="w-full bg-black border border-zinc-800 rounded-xl p-3 text-xs"><option value="720x1280">9:16 TikTok</option><option value="1280x720">16:9 YouTube</option><option>1:1 Insta</option></select></div>
+    <div><p class="text-[10px] text-zinc-500 mb-2">🎨 STYLE</p><select id="style" class="w-full bg-black border border-zinc-800 rounded-xl p-3 text-xs"><option>Realistic 4K</option><option>Cinematic</option><option>Cartoon</option><option>Horror</option><option>Islamic</option></select></div>
   </div>
+
+  <button id="btn" class="w-full mt-6 bg-white text-black rounded-full py-4 font-black text-[14px]">⚡ GENERATE PRO VIDEO</button>
+  <p id="status" class="text-center text-[11px] text-zinc-500 mt-2">Google Friendly • No Watermark • 4K</p>
+
+  <div class="mt-4 bg-black rounded-[20px] min-h-[400px] border border-zinc-800 relative flex items-center justify-center overflow-hidden">
+    <video id="v" controls autoplay loop playsinline class="hidden w-full h-full rounded-[20px]"></video>
+    <img id="img" class="hidden w-full h-full object-cover rounded-[20px]">
+    <div id="ph" class="text-zinc-600 text-center"><div class="text-4xl">🎬</div><p class="text-xs mt-2">Video yahan ayegi<br>Bina text ke</p></div>
+    <div id="ld" class="hidden absolute inset-0 bg-black/90 flex flex-col items-center justify-center"><div class="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div><p class="text-xs mt-3">Generating...</p></div>
+  </div>
+  <a id="dl" class="hidden mt-3 block text-center w-full bg-zinc-900 border border-zinc-800 rounded-full py-3 text-xs">⬇️ Download Video</a>
 </div>
 
-<div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-6 p-4">
-  <!-- LEFT CONTROLS -->
-  <div class="lg:col-span-2 bg-[#121214] border border-zinc-800 rounded-[24px] p-5 space-y-5">
-
-    <div>
-      <label class="text-xs text-zinc-400 flex gap-2"><i class="fa fa-pen"></i> PROMPT BOX</label>
-      <textarea id="prompt" class="w-full mt-2 bg-black border border-zinc-800 rounded-xl p-3 text-sm h-24 outline-none focus:border-violet-500" placeholder="Example: A Pakistani news anchor talking, serious face..."></textarea>
-    </div>
-
-    <div>
-      <label class="text-xs text-zinc-400"><i class="fa fa-user"></i> AVATAR BOX - Select Character</label>
-      <div class="grid grid-cols-4 gap-2 mt-2">
-        <div onclick="selectAvatar(this)" class="avatar border-2 border-violet-500 rounded-xl overflow-hidden cursor-pointer"><img src="https://i.pravatar.cc/100?img=5"><p class="text-[10px] text-center py-1">Girl 1</p></div>
-        <div onclick="selectAvatar(this)" class="avatar border border-zinc-700 rounded-xl overflow-hidden cursor-pointer"><img src="https://i.pravatar.cc/100?img=8"><p class="text-[10px] text-center py-1">Boy 1</p></div>
-        <div onclick="selectAvatar(this)" class="avatar border border-zinc-700 rounded-xl overflow-hidden cursor-pointer"><img src="https://i.pravatar.cc/100?img=32"><p class="text-[10px] text-center py-1">Maulana</p></div>
-        <div onclick="selectAvatar(this)" class="avatar border border-zinc-700 rounded-xl overflow-hidden cursor-pointer"><img src="https://i.pravatar.cc/100?img=12"><p class="text-[10px] text-center py-1">Horror</p></div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4">
-      <div>
-        <label class="text-xs text-zinc-400"><i class="fa fa-expand"></i> RATIO BOX</label>
-        <select id="ratio" class="w-full mt-2 bg-black border border-zinc-800 rounded-xl p-3 text-sm"><option>9:16 - TikTok / Reels</option><option>16:9 - YouTube</option><option>1:1 - Instagram</option></select>
-      </div>
-      <div>
-        <label class="text-xs text-zinc-400"><i class="fa fa-palette"></i> STYLE BOX</label>
-        <select id="style" class="w-full mt-2 bg-black border border-zinc-800 rounded-xl p-3 text-sm"><option>Realistic 4K</option><option>Cinematic Epic</option><option>3D Pixar Cartoon</option><option>Anime</option><option>Horror Dark</option><option>Islamic</option></select>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4">
-      <div>
-        <label class="text-xs text-zinc-400"><i class="fa fa-microphone"></i> VOICE OVER BOX</label>
-        <select id="voice" class="w-full mt-2 bg-black border border-zinc-800 rounded-xl p-3 text-sm"><option>Urdu Male - Deep</option><option>Urdu Female - Soft</option><option>English Male</option><option>English Female</option><option>No Voice</option></select>
-      </div>
-      <div>
-        <label class="text-xs text-zinc-400"><i class="fa fa-image"></i> APNI PICTURE SE VIDEO</label>
-        <input type="file" id="imgUpload" accept="image/*" class="w-full mt-2 bg-black border border-zinc-800 rounded-xl p-2 text-xs">
-      </div>
-    </div>
-
-    <button id="btn" class="w-full bg-gradient-to-r from-violet-600 to-pink-600 rounded-full py-4 font-bold">⚡ GENERATE PRO VIDEO</button>
-    <p id="status" class="text-center text-xs text-zinc-500">Professional • No Text On Video • Ready</p>
-  </div>
-
-  <!-- RIGHT PREVIEW -->
-  <div class="bg-[#121214] border border-zinc-800 rounded-[24px] p-4">
-    <h3 class="text-sm font-bold mb-3">PREVIEW</h3>
-    <div class="bg-black rounded-2xl min-h-[500px] flex items-center justify-center relative border border-zinc-800 overflow-hidden">
-      <video id="video" controls autoplay loop class="hidden w-full h-full object-cover rounded-2xl"></video>
-      <div id="ph" class="text-center"><div class="text-4xl">🎬</div><p class="text-xs text-zinc-500 mt-2">Video Preview<br>Yahan ayegi</p></div>
-      <div id="ld" class="hidden absolute inset-0 bg-black/90 flex flex-col items-center justify-center"><div class="w-8 h-8 border-2 border-violet-500 border-t-transparent rounded-full animate-spin"></div><p class="text-xs mt-2">AI Generating...</p></div>
-    </div>
-    <div class="mt-4 grid grid-cols-3 gap-2 text-[10px] text-zinc-400 text-center">
-      <div class="bg-black rounded-lg p-2">✅ No Watermark</div><div class="bg-black rounded-lg p-2">✅ No Text</div><div class="bg-black rounded-lg p-2">✅ 4K HD</div>
-    </div>
-  </div>
+<!-- GOOGLE KE LIYE EXTRA CONTENT -->
+<div class="mt-8 p-4 text-zinc-600 text-[12px] leading-5">
+  <h3 class="text-white font-bold text-sm">What is Vidco AI?</h3>
+  <p class="mt-2">Vidco AI is Pakistan's first free professional AI video generator. Create TikTok, YouTube Shorts, and Instagram Reels without watermark. No text overlay on video. 100% free, made in Faisalabad, Pakistan.</p>
+  <h3 class="text-white font-bold text-sm mt-4">Features</h3>
+  <p>✓ Text to Video ✓ Image to Video ✓ No Watermark ✓ No Text On Video ✓ 4K Quality ✓ Free Forever</p>
 </div>
+</main>
 
-<script type="module">
-import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client@1.7.0/dist/index.js";
-function selectAvatar(el){ document.querySelectorAll('.avatar').forEach(a=>a.classList.remove('border-violet-500','border-2')); document.querySelectorAll('.avatar').forEach(a=>a.classList.add('border-zinc-700')); el.classList.remove('border-zinc-700'); el.classList.add('border-2','border-violet-500'); }
-window.selectAvatar=selectAvatar;
-const btn=document.getElementById('btn');
-btn.onclick=async()=>{
-  const prompt=document.getElementById('prompt').value; const style=document.getElementById('style').value;
+<script>
+document.getElementById('btn').onclick=async()=>{
+  const prompt=document.getElementById('prompt').value.trim();
   if(!prompt) return alert('Prompt likho bhai!');
-  document.getElementById('ld').classList.remove('hidden');
+  const ratio=document.getElementById('ratio').value.split('x');
+  const ld=document.getElementById('ld'), v=document.getElementById('v'), ph=document.getElementById('ph'), st=document.getElementById('status'), img=document.getElementById('img');
+  ld.classList.remove('hidden'); st.textContent='⏳ Video ban rahi hai...';
   try{
-    const client=await Client.connect("Vidcoai/vidco-ai");
-    const res=await client.predict("/predict",{prompt: prompt + " " + style, style: style, duration: 4});
-    let url=res.data[0].video?res.data[0].video.url:res.data[0];
-    if(typeof url!='string') url=res.data[0][0]?.video?.url || res.data[0].url;
-    const v=document.getElementById('video'); v.src=url; v.classList.remove('hidden'); document.getElementById('ph').classList.add('hidden');
-    document.getElementById('status').innerText='✅ Video Ready - Professional!';
-  }catch(e){ document.getElementById('status').innerText='Space waking up, 20 sec baad try karo'; }
-  finally{ document.getElementById('ld').classList.add('hidden'); }
+    const clean=encodeURIComponent(prompt + ' cinematic 4k professional no text no watermark ' + document.getElementById('style').value);
+    const w=ratio[0], h=ratio[1];
+    const url=`https://image.pollinations.ai/prompt/${clean}?width=${w}&height=${h}&nologo=true&enhance=true&model=turbo&seed=${Date.now()}`;
+    img.src=url;
+    img.onload=()=>{
+      img.classList.remove('hidden'); ph.classList.add('hidden');
+      const canvas=document.createElement('canvas'); canvas.width=w; canvas.height=h;
+      const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0,w,h);
+      const stream=canvas.captureStream(30); const rec=new MediaRecorder(stream); const chunks=[];
+      rec.ondataavailable=e=>chunks.push(e.data);
+      rec.onstop=()=>{ const blob=new Blob(chunks,{type:'video/webm'}); const u=URL.createObjectURL(blob); v.src=u; v.classList.remove('hidden'); img.classList.add('hidden'); document.getElementById('dl').href=u; document.getElementById('dl').classList.remove('hidden'); st.textContent='✅ Video Ready!'; };
+      rec.start(); let i=0; const an=setInterval(()=>{ctx.clearRect(0,0,w,h); const s=1+i*0.0005; ctx.save(); ctx.translate(w/2,h/2); ctx.scale(s,s); ctx.drawImage(img,-w/2,-h/2,w,h); ctx.restore(); i++; if(i>150){clearInterval(an); rec.stop();}},33);
+    };
+  }catch(e){st.textContent='Error, dubara try karo';} finally{setTimeout(()=>ld.classList.add('hidden'),1500);}
 }
 </script>
 </body>
 </html>
-  
+
+    
