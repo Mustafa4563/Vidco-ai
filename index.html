@@ -1,18 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Vidco AI - AI Video Generator</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidco AI - Text to Video AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body{font-family:Arial;text-align:center;padding:50px;background:#000;color:#fff}
-h1{font-size:40px;color:#00ff88}
-a{padding:15px 30px;background:#00ff88;color:#000;text-decoration:none;border-radius:10px;font-weight:bold;display:inline-block;margin-top:20px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
+body{background:#070707;color:#fff;overflow-x:hidden}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;}
+.logo{font-size:28px;font-weight:800;color:#00ff88}
+.logo span{color:#fff}
+nav a{color:#aaa;text-decoration:none;margin-left:25px}
+.hero{text-align:center;padding:40px 5% 20px}
+.hero h1{font-size:52px;line-height:1.1;font-weight:800}
+.hero h1 span{color:#00ff88}
+.hero p{color:#888;margin-top:15px;font-size:18px}
+.box{max-width:700px;margin:40px auto;background:#121212;border:1px solid #222;border-radius:20px;padding:25px}
+textarea{width:100%;height:120px;background:#1a1a1a;border:1px solid #333;border-radius:12px;color:#fff;padding:15px;font-size:16px;resize:none;outline:none}
+textarea:focus{border-color:#00ff88}
+.row{display:flex;gap:10px;margin-top:15px}
+select{flex:1;background:#1a1a1a;border:1px solid #333;color:#fff;padding:12px;border-radius:10px}
+.btn{width:100%;margin-top:15px;background:#00ff88;color:#000;border:none;padding:16px;border-radius:12px;font-size:18px;font-weight:800;cursor:pointer;transition:0.3s}
+.btn:hover{transform:scale(1.02);box-shadow:0 0 30px #00ff8855}
+.progress{display:none;margin-top:20px;text-align:center}
+.bar{width:100%;height:6px;background:#222;border-radius:10px;overflow:hidden;margin-top:10px}
+.fill{height:100%;width:0%;background:#00ff88;transition:0.3s}
+.result{display:none;margin-top:25px;text-align:center}
+video{width:100%;border-radius:15px;background:#000}
+.foot{text-align:center;padding:40px;color:#444;font-size:14px}
 </style>
 </head>
 <body>
-<h1>Vidco AI</h1>
-<p>Your AI Video Generator is Live!</p>
-<p>Website successfully deployed on Vercel.</p>
-<a href="#">Coming Soon</a>
+<header>
+<div class="logo">Vidco <span>AI</span></div>
+<nav><a href="#">Home</a><a href="#">Pricing</a><a href="#">API</a></nav>
+</header>
+
+<div class="hero">
+<h1>Create Stunning Videos <br><span>with AI in Seconds</span></h1>
+<p>Just write your idea, Vidco AI will turn it into a video.</p>
+</div>
+
+<div class="box">
+<textarea id="prompt" placeholder="Example: A cinematic shot of a futuristic city in Faisalabad, drone view, 4K..."></textarea>
+<div class="row">
+<select><option>16:9 Landscape</option><option>9:16 Portrait</option><option>1:1 Square</option></select>
+<select><option>5 Seconds</option><option>10 Seconds</option><option>15 Seconds</option></select>
+</div>
+<button class="btn" onclick="generate()">✨ Generate Video</button>
+
+<div class="progress" id="prog">
+<p id="ptxt">Initializing AI Model...</p>
+<div class="bar"><div class="fill" id="fill"></div></div>
+</div>
+
+<div class="result" id="result">
+<video controls autoplay loop id="vid" src="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4"></video>
+<p style="margin-top:10px;color:#00ff88">Your video is ready!</p>
+<button class="btn" style="background:#fff" onclick="location.reload()">Generate Another</button>
+</div>
+</div>
+
+<div class="foot">© 2026 Vidco AI - Built by Mustafa - Powered by Vercel</div>
+
+<script>
+function generate(){
+ if(!document.getElementById('prompt').value){alert('Pehle prompt likho bhai!');return}
+ document.getElementById('prog').style.display='block';
+ let w=0; let txt=document.getElementById('ptxt'); let fill=document.getElementById('fill');
+ let steps=["Loading Vidco Engine...","Understanding your prompt...","Generating frames...","Adding motion & style...","Finalizing 4K Video..."];
+ let i=0;
+ let inter=setInterval(()=>{
+   w+=Math.random()*18;
+   if(w>100){w=100; clearInterval(inter); document.getElementById('prog').style.display='none'; document.getElementById('result').style.display='block';}
+   fill.style.width=w+'%';
+   if(w> i*25 && i<steps.length){txt.innerText=steps[i]; i++}
+ },400);
+}
+</script>
 </body>
 </html>
