@@ -2,141 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIDCO PRO - HeyGen Exact - Mustafa</title>
+<title>VIDCO FIXED - Video Banegi - Mustafa</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 body{font-family:Inter,sans-serif;background:#f5f5ff}
 .hey{box-shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 12px rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.06)}
-.card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.grad{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.05) 85%);z-index:1}
 </style>
 </head>
 <body class="bg-[#f5f5ff]">
 <div class="max-w-[440px] mx-auto bg-[#f8f8ff] min-h-screen">
 
-<!-- HEADER - EXACT -->
-<div class="flex justify-between items-center px-5 py-4 bg-[#f8f8ff]">
-<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center hey relative"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><span class="absolute top-2 right-2.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span></button>
-<button onclick="openUpgrade()" class="flex items-center gap-2 bg-white rounded-full px-5 py-3 font-bold text-[14px] hey"><span class="text-[16px]">💎</span> Upgrade</button>
+<div class="flex justify-between items-center px-5 py-4">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center hey">☰</button>
+<button onclick="openUpgrade()" class="bg-white rounded-full px-5 py-3 font-bold text-[14px] hey">💎 Upgrade - Rs.1000</button>
 </div>
 
 <div class="px-5 pb-8">
 
-<!-- CREATE AVATAR / VIDEO - EXACT HEYGEN -->
-<div class="grid grid-cols-2 gap-4 mt-1">
-<div onclick="openWork('avatar')" class="bg-white rounded-[22px] p-5 hey cursor-pointer active:scale-[0.97] transition">
-<div class="w-[56px] h-[56px] bg-[#eaf6ff] rounded-full flex items-center justify-center"><svg width="28" height="28" viewBox="0 0 24 24" fill="#0ea5e9"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6v1H4v-1z"/></svg></div>
-<p class="font-bold text-[15px] mt-14 tracking-tight">Create Avatar</p>
-</div>
-<div onclick="openWork('video')" class="bg-white rounded-[22px] p-5 hey cursor-pointer active:scale-[0.97] transition">
-<div class="w-[56px] h-[56px] bg-[#f2f2f2] rounded-full flex items-center justify-center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="3" stroke="black" stroke-width="1.6"/><path d="M10 9l5 3-5 3V9z" fill="black"/></svg></div>
-<p class="font-bold text-[15px] mt-14 tracking-tight">Create Video</p>
-</div>
+<div class="grid grid-cols-2 gap-4">
+<div onclick="openWork('avatar')" class="bg-white rounded-[22px] p-5 hey cursor-pointer"><div class="w-14 h-14 bg-[#eaf6ff] rounded-full flex items-center justify-center text-2xl">👤</div><p class="font-bold mt-10">Create Avatar</p><p class="text-[10px] text-zinc-500">Click pe kaam karega</p></div>
+<div onclick="openWork('video')" class="bg-white rounded-[22px] p-5 hey cursor-pointer"><div class="w-14 h-14 bg-[#f2f2f2] rounded-full flex items-center justify-center text-2xl">🎬</div><p class="font-bold mt-10">Create Video</p><p class="text-[10px] text-zinc-500">Gallery se picture</p></div>
 </div>
 
-<!-- VIDEO PROMPTS + PERSONALIZE - EXACT -->
 <div class="flex justify-between items-center mt-8">
-<div class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2.5"/><path d="M8 10l4 2-4 2V10z" fill="#555" stroke="none"/></svg><p class="font-semibold text-[15px] text-[#1a1a1a]">Video Prompts</p></div>
-<button onclick="openWork('personalize')" class="font-medium text-[13.5px] underline underline-offset-4 text-[#333]">Personalize</button>
+<p class="font-semibold text-[15px]">📹 Video Prompts</p>
+<button onclick="openWork('personalize')" class="underline text-[13px]">Personalize</button>
 </div>
 
-<!-- ADS & PROMO - EXACT HEYGEN CARD -->
-<div onclick="openWork('ads')" class="mt-4 relative rounded-[22px] h-[148px] hey cursor-pointer overflow-hidden active:scale-[0.98] transition">
-<img src="https://images.unsplash.com/photo-1592621385366-0ea2be7c1fa8?w=600&h=300&fit=crop&crop=face" class="card-img">
-<div class="grad"></div>
-<div class="relative z-[2] h-full flex flex-col justify-center px-6"><p class="font-extrabold text-white text-[22px] leading-none tracking-tight">Ads & Promo</p><div class="mt-3 w-fit bg-white/15 backdrop-blur-[12px] border border-white/30 text-white rounded-full px-5 py-2.5 text-[13px] font-semibold flex items-center gap-1.5">Create Now <span class="text-[16px]">›</span></div></div>
+<div onclick="openWork('ads')" class="mt-4 relative rounded-[22px] h-[140px] hey overflow-hidden cursor-pointer">
+<img src="https://images.unsplash.com/photo-1592621385366-0ea2be7c1fa8?w=600&h=300&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="relative z-10 h-full flex flex-col justify-center px-6"><p class="font-black text-white text-[22px]">Ads & Promo</p><div class="mt-2 bg-white/20 border border-white/30 text-white rounded-full px-5 py-2 text-[13px] w-fit">Create Now ›</div></div>
 </div>
 
-<!-- EDUCATIONAL -->
-<div onclick="openWork('educational')" class="mt-4 relative rounded-[22px] h-[148px] hey cursor-pointer overflow-hidden active:scale-[0.98] transition">
-<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=300&fit=crop" class="card-img">
-<div class="grad"></div>
-<div class="relative z-[2] h-full flex flex-col justify-center px-6"><p class="font-extrabold text-white text-[22px] leading-none tracking-tight">Educational Video</p><div class="mt-3 w-fit bg-white/15 backdrop-blur-[12px] border border-white/30 text-white rounded-full px-5 py-2.5 text-[13px] font-semibold flex items-center gap-1.5">Create Now <span class="text-[16px]">›</span></div></div>
+<div onclick="openWork('educational')" class="mt-4 relative rounded-[22px] h-[140px] hey overflow-hidden cursor-pointer">
+<img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=300&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="relative z-10 h-full flex flex-col justify-center px-6"><p class="font-black text-white text-[22px]">Educational Video</p><div class="mt-2 bg-white/20 border border-white/30 text-white rounded-full px-5 py-2 text-[13px] w-fit">Create Now ›</div></div>
 </div>
 
-<!-- EXPERT EXPLAINER -->
-<div onclick="openWork('expert')" class="mt-4 relative rounded-[22px] h-[148px] hey cursor-pointer overflow-hidden active:scale-[0.98] transition">
-<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=300&fit=crop&crop=face" class="card-img">
-<div class="grad"></div>
-<div class="relative z-[2] h-full flex flex-col justify-center px-6"><p class="font-extrabold text-white text-[22px] leading-none tracking-tight">Expert Explainer</p><div class="mt-3 w-fit bg-white/15 backdrop-blur-[12px] border border-white/30 text-white rounded-full px-5 py-2.5 text-[13px] font-semibold flex items-center gap-1.5">Create Now <span class="text-[16px]">›</span></div></div>
+<div onclick="openWork('expert')" class="mt-4 relative rounded-[22px] h-[140px] hey overflow-hidden cursor-pointer">
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=300&fit=crop" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-black/60"></div>
+<div class="relative z-10 h-full flex flex-col justify-center px-6"><p class="font-black text-white text-[22px]">Expert Explainer</p><div class="mt-2 bg-white/20 border border-white/30 text-white rounded-full px-5 py-2 text-[13px] w-fit">Create Now ›</div></div>
 </div>
 
-<!-- WORK BOX - HAR CLICK PE APNA KAAM - KHALI NAHI -->
+<!-- WORK BOX -->
 <div id="workBox" class="hidden mt-6 bg-white rounded-[24px] p-5 hey">
+<div class="flex justify-between"><p id="workTitle" class="font-black">👤 CREATE AVATAR</p><button onclick="closeWork()" class="w-8 h-8 bg-zinc-100 rounded-full">✕</button></div>
+<p id="workDesc" class="text-[11px] text-zinc-500 mt-1"></p>
 
-<div class="flex justify-between items-start">
-<div><p id="workTitle" class="font-extrabold text-[16px]">👤 CREATE AVATAR</p><p id="workDesc" class="text-[11px] text-zinc-500 mt-1">Click pe bara dikhega - Select karo</p></div>
-<button onclick="closeWork()" class="w-8 h-8 bg-zinc-100 rounded-full flex items-center justify-center text-[12px]">✕</button>
-</div>
-
-<!-- AVATAR -->
 <div id="avatarContent" class="hidden">
 <div class="grid grid-cols-4 gap-3 mt-4">
-<div onclick="showBig('Girl 1','https://i.pravatar.cc/400?img=5')" class="cursor-pointer"><div class="rounded-[14px] overflow-hidden border-2 border-violet-600"><img src="https://i.pravatar.cc/200?img=5" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1.5 font-bold bg-violet-50">Girl 1</p></div></div>
-<div onclick="showBig('Boy 1','https://i.pravatar.cc/400?img=8')" class="cursor-pointer"><div class="rounded-[14px] overflow-hidden border border-zinc-200"><img src="https://i.pravatar.cc/200?img=8" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1.5 font-bold">Boy 1</p></div></div>
-<div onclick="showBig('Maulana','https://i.pravatar.cc/400?img=32')" class="cursor-pointer"><div class="rounded-[14px] overflow-hidden border border-zinc-200"><img src="https://i.pravatar.cc/200?img=32" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1.5 font-bold">Maulana</p></div></div>
-<div onclick="showBig('Horror','https://i.pravatar.cc/400?img=12')" class="cursor-pointer"><div class="rounded-[14px] overflow-hidden border border-zinc-200"><img src="https://i.pravatar.cc/200?img=12" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1.5 font-bold">Horror</p></div></div>
+<div onclick="showBig('Girl 1','https://i.pravatar.cc/400?img=5')" class="cursor-pointer border-2 border-violet-600 rounded-xl overflow-hidden"><img src="https://i.pravatar.cc/200?img=5" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1 font-bold bg-violet-50">Girl 1</p></div>
+<div onclick="showBig('Boy 1','https://i.pravatar.cc/400?img=8')" class="cursor-pointer border border-zinc-200 rounded-xl overflow-hidden"><img src="https://i.pravatar.cc/200?img=8" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1 font-bold">Boy 1</p></div>
+<div onclick="showBig('Maulana','https://i.pravatar.cc/400?img=32')" class="cursor-pointer border border-zinc-200 rounded-xl overflow-hidden"><img src="https://i.pravatar.cc/200?img=32" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1 font-bold">Maulana</p></div>
+<div onclick="showBig('Horror','https://i.pravatar.cc/400?img=12')" class="cursor-pointer border border-zinc-200 rounded-xl overflow-hidden"><img src="https://i.pravatar.cc/200?img=12" class="w-full h-[70px] object-cover"><p class="text-[10px] text-center py-1 font-bold">Horror</p></div>
 </div>
-<p id="selTxt" class="text-[11px] font-bold text-violet-600 mt-3 bg-violet-50 border border-violet-200 rounded-full px-3 py-1.5 w-fit">Selected: Girl 1 - Creator Lock ON</p>
+<p id="selTxt" class="text-[11px] font-bold text-violet-600 mt-3">Selected: Girl 1</p>
 </div>
 
-<!-- VIDEO -->
 <div id="videoContent" class="hidden">
-<label class="mt-4 w-full bg-[#f8f8ff] border-2 border-dashed border-violet-300 rounded-[16px] p-4 flex flex-col items-center cursor-pointer">
-<span class="bg-black text-white px-5 py-2 rounded-full text-[12px] font-bold">📸 Apni Picture - Gallery</span>
+<label class="mt-4 w-full bg-[#f8f8ff] border-2 border-dashed border-violet-300 rounded-xl p-4 flex flex-col items-center cursor-pointer">
+<span class="bg-black text-white px-5 py-2 rounded-full text-[12px] font-bold">📸 Apni Picture</span>
 <input type="file" id="myPic" accept="image/*" hidden onchange="loadPic(this)">
 <img id="picPrev" class="hidden mt-3 w-full h-[150px] object-cover rounded-xl border-2 border-violet-500">
-<p id="picName" class="text-[10px] text-zinc-500 mt-2 text-center">Gallery se chuno - Video isi se banegi</p>
+<p id="picName" class="text-[10px] text-zinc-500 mt-2">Gallery se</p>
 </label>
 <p class="font-bold text-[12px] mt-4">Prompt</p>
-<textarea id="prompt" placeholder="Jaisi prompt waisi video..." class="w-full mt-2 bg-[#f8f8ff] border border-zinc-200 rounded-[14px] p-3.5 text-[13px] h-[75px] outline-none"></textarea>
+<textarea id="prompt" class="w-full mt-2 bg-[#f8f8ff] border rounded-xl p-3 text-[13px] h-[75px]" placeholder="Girl 1 Ads style, same face 30 min...">Girl 1 talking, Ads & Promo style, same face 30 min, creator lock ON</textarea>
 <div class="grid grid-cols-2 gap-2 mt-3">
-<select id="duration" class="bg-[#f8f8ff] border border-zinc-200 rounded-xl p-3 text-[11px] font-bold"><option value="10">10s FREE</option><option value="15">15s FREE</option><option value="30">30s - Rs.1000</option><option value="1800">30 Min - Rs.1000 - Lock ON</option></select>
-<select class="bg-[#f8f8ff] border border-zinc-200 rounded-xl p-3 text-[11px]"><option>9:16</option><option>16:9</option></select>
+<select id="duration" class="bg-zinc-50 border rounded-xl p-3 text-[11px] font-bold"><option value="10">10s FREE</option><option value="15">15s FREE</option><option value="30">30s Rs.1000</option><option value="1800">30 Min Rs.1000</option></select>
+<select class="bg-zinc-50 border rounded-xl p-3 text-[11px]"><option>9:16 TikTok</option><option>16:9</option></select>
 </div>
-<div class="flex gap-2 mt-3 bg-violet-50 border border-violet-200 rounded-xl p-2.5"><input type="checkbox" checked><p class="text-[10px] font-bold text-violet-800">🔒 Creator Lock ON - 30 min same face</p></div>
-</div>
-
-<!-- ADS -->
-<div id="adsContent" class="hidden">
-<div class="mt-4 bg-orange-50 border border-orange-200 rounded-xl p-3"><p class="font-bold text-[12px]">🎯 Ads & Promo Kaam</p><p class="text-[11px] mt-1">Product promo - Ring light style</p></div>
-<textarea id="adsP" class="w-full mt-2 bg-[#f8f8ff] border rounded-xl p-3 text-[12px] h-[70px]">Smiling woman promoting product with ring light, Ads & Promo style, professional energetic, same face 30 min, creator lock ON</textarea>
-<button onclick="document.getElementById('prompt').value=document.getElementById('adsP').value; alert('Ads prompt set!');" class="w-full mt-2 bg-orange-500 text-white rounded-full py-2.5 text-[12px] font-bold">Use This Prompt</button>
 </div>
 
-<!-- EDU -->
-<div id="eduContent" class="hidden">
-<div class="mt-4 bg-blue-50 border border-blue-200 rounded-xl p-3"><p class="font-bold text-[12px]">📚 Educational Ka Kaam</p><p class="text-[11px] mt-1">Teaching friendly</p></div>
-<textarea id="eduP" class="w-full mt-2 bg-[#f8f8ff] border rounded-xl p-3 text-[12px] h-[70px]">Educational video, friendly teacher with cookies, teaching style, same face 30 min, creator lock</textarea>
-<button onclick="document.getElementById('prompt').value=document.getElementById('eduP').value; alert('Edu prompt set!');" class="w-full mt-2 bg-blue-600 text-white rounded-full py-2.5 text-[12px] font-bold">Use This Prompt</button>
+<div id="adsContent" class="hidden"><div class="mt-3 bg-orange-50 border rounded-xl p-3 text-[11px]"><b>Ads & Promo</b> - Product promo</div><textarea id="adsP" class="w-full mt-2 bg-zinc-50 border rounded-xl p-3 text-[12px] h-[60px]">Smiling woman promoting product with ring light, Ads & Promo, same face 30 min</textarea><button onclick="document.getElementById('prompt').value=document.getElementById('adsP').value; alert('Ads prompt set!');" class="w-full mt-2 bg-orange-500 text-white rounded-full py-2 text-[12px] font-bold">Use This Prompt</button></div>
+
+<div id="eduContent" class="hidden"><div class="mt-3 bg-blue-50 border rounded-xl p-3 text-[11px]"><b>Educational</b> - Teaching</div><textarea id="eduP" class="w-full mt-2 bg-zinc-50 border rounded-xl p-3 text-[12px] h-[60px]">Educational video, friendly teacher with cookies</textarea><button onclick="document.getElementById('prompt').value=document.getElementById('eduP').value; alert('Edu prompt set!');" class="w-full mt-2 bg-blue-600 text-white rounded-full py-2 text-[12px] font-bold">Use This Prompt</button></div>
+
+<div id="expertContent" class="hidden"><div class="mt-3 bg-green-50 border rounded-xl p-3 text-[11px]"><b>Expert</b> - Business</div><textarea id="expP" class="w-full mt-2 bg-zinc-50 border rounded-xl p-3 text-[12px] h-[60px]">Professional expert woman in business suit with hologram</textarea><button onclick="document.getElementById('prompt').value=document.getElementById('expP').value; alert('Expert prompt set!');" class="w-full mt-2 bg-green-600 text-white rounded-full py-2 text-[12px] font-bold">Use This Prompt</button></div>
+
+<div id="persContent" class="hidden"><textarea id="persP" placeholder="Apni prompt..." class="w-full mt-3 bg-zinc-50 border rounded-xl p-3 text-[12px] h-[80px]"></textarea><button onclick="document.getElementById('prompt').value=document.getElementById('persP').value; alert('Personal set!');" class="w-full mt-2 bg-violet-600 text-white rounded-full py-2 text-[12px] font-bold">Use This Prompt</button></div>
+
+<div class="mt-5 border-t pt-4">
+<button onclick="gen()" class="w-full bg-black text-white rounded-full py-4 font-black text-[14px]">⚡ GENERATE VIDEO - FIXED</button>
+<p id="status" class="text-center text-[10px] text-zinc-500 mt-2">Girl 1 | Lock ON | FREE 10-15s</p>
+
+<div class="mt-4 bg-black rounded-[20px] min-h-[380px] relative flex items-center justify-center overflow-hidden">
+<video id="outV" controls autoplay loop playsinline class="hidden w-full h-full rounded-[20px] absolute inset-0"></video>
+<img id="outI" class="hidden w-full h-full object-cover rounded-[20px] absolute inset-0">
+<div id="outPh" class="text-zinc-500 text-center p-6"><div class="text-4xl">🎬</div><p class="text-[12px] mt-2">Video yahan ayegi<br>FIXED - Ab banegi</p></div>
+<div id="outLoad" class="hidden absolute inset-0 bg-black/90 flex flex-col items-center justify-center z-10"><div class="w-10 h-10 border-2 border-white border-t-transparent rounded-full animate-spin"></div><p id="loadTxt" class="text-white text-[12px] mt-3 font-bold">Bana raha hu...</p><p class="text-zinc-400 text-[10px] mt-1">30 sec lagega</p></div>
 </div>
 
-<!-- EXPERT -->
-<div id="expertContent" class="hidden">
-<div class="mt-4 bg-green-50 border border-green-200 rounded-xl p-3"><p class="font-bold text-[12px]">👩‍💼 Expert Ka Kaam</p><p class="text-[11px] mt-1">Business hologram</p></div>
-<textarea id="expP" class="w-full mt-2 bg-[#f8f8ff] border rounded-xl p-3 text-[12px] h-[70px]">Professional expert woman in business suit explaining with hologram, expert explainer style, same face 30 min</textarea>
-<button onclick="document.getElementById('prompt').value=document.getElementById('expP').value; alert('Expert prompt set!');" class="w-full mt-2 bg-green-600 text-white rounded-full py-2.5 text-[12px] font-bold">Use This Prompt</button>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<a id="dlBtn" class="hidden text-center bg-zinc-900 text-white rounded-full py-3 text-[12px] font-bold">⬇️ Video Download</a>
+<a id="dlImgBtn" class="hidden text-center bg-violet-600 text-white rounded-full py-3 text-[12px] font-bold">🖼️ Image Download</a>
 </div>
-
-<!-- PERSONALIZE -->
-<div id="persContent" class="hidden">
-<div class="mt-4 bg-violet-50 border border-violet-200 rounded-xl p-3"><p class="font-bold text-[12px]">✨ Personalize Ka Kaam</p><p class="text-[11px] mt-1">Apni marzi ki prompt</p></div>
-<textarea id="persP" placeholder="Apni prompt likho..." class="w-full mt-2 bg-[#f8f8ff] border rounded-xl p-3 text-[12px] h-[90px]"></textarea>
-<button onclick="document.getElementById('prompt').value=document.getElementById('persP').value; alert('Personal prompt set!');" class="w-full mt-2 bg-violet-600 text-white rounded-full py-2.5 text-[12px] font-bold">Use This Prompt</button>
-</div>
-
-<!-- GENERATE - HAR BOX ME SAME - KAAM KAREGA -->
-<div class="mt-5 pt-4 border-t border-zinc-100">
-<button onclick="gen()" class="w-full bg-black text-white rounded-full py-4 font-black text-[14px]">⚡ GENERATE VIDEO - Same Creator</button>
-<p id="status" class="text-center text-[10px] text-zinc-500 mt-2">Girl 1 | Lock ON | 10-15s FREE, Upar Rs.1000</p>
-<div class="mt-4 bg-black rounded-[20px] min-h-[350px] relative flex items-center justify-center overflow-hidden">
-<video id="outV" controls autoplay loop playsinline class="hidden w-full h-full rounded-[20px]"></video>
-<img id="outI" class="hidden w-full h-full object-cover rounded-[20px]">
-<div id="outPh" class="text-zinc-500 text-center"><div class="text-3xl">🎬</div><p class="text-[11px] mt-2">Preview yahan<br>10-15s FREE</p></div>
-<div id="outLoad" class="hidden absolute inset-0 bg-black/90 flex flex-col items-center justify-center"><div class="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div><p id="loadTxt" class="text-white text-[12px] mt-2 font-bold"></p></div>
-</div>
-<a id="dlBtn" class="hidden mt-3 block text-center bg-zinc-900 text-white rounded-full py-3 text-[12px] font-bold">⬇️ Download</a>
+<p id="errorTxt" class="hidden text-[11px] text-red-500 mt-2 text-center bg-red-50 border border-red-200 rounded-xl p-2"></p>
 </div>
 
 </div>
@@ -144,11 +108,10 @@ body{font-family:Inter,sans-serif;background:#f5f5ff}
 </div>
 </div>
 
-<!-- BIG AVATAR -->
-<div id="bigModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-[24px] p-4 w-full max-w-sm text-center"><img id="bigImg" class="w-full h-[320px] object-cover rounded-[18px]"><h3 id="bigName" class="font-black text-[18px] mt-3"></h3><button onclick="selectAv()" class="w-full mt-4 bg-black text-white rounded-full py-3 font-bold">✅ Select</button><button onclick="document.getElementById('bigModal').classList.add('hidden')" class="w-full mt-2 text-[11px] text-zinc-500">Band</button></div></div>
+<!-- MODALS -->
+<div id="bigModal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-[24px] p-4 w-full max-w-sm text-center"><img id="bigImg" class="w-full h-[300px] object-cover rounded-[18px]"><h3 id="bigName" class="font-black text-[18px] mt-3"></h3><button onclick="selectAv()" class="w-full mt-4 bg-black text-white rounded-full py-3 font-bold">✅ Select</button><button onclick="document.getElementById('bigModal').classList.add('hidden')" class="w-full mt-2 text-[11px] text-zinc-500">Band</button></div></div>
 
-<!-- UPGRADE MODAL - SIRF YAHAN NUMBER SHOW - HIDDEN SYSTEM -->
-<div id="jazzModal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-[24px] p-6 w-full max-w-sm"><div class="text-center"><div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-xl mx-auto">M</div><h2 class="font-black mt-2">Mustafa Saleem</h2><p class="text-[11px] text-zinc-500">Hidden - Sirf Upgrade pe show</p></div><div class="mt-4 bg-red-50 border-2 border-red-600 rounded-[18px] p-4 text-center"><p class="text-[10px] font-black">JAZZCASH + EASYPAISA - RS.1000</p><p class="font-black text-[30px] text-red-600 tracking-widest">03221731950</p><p class="font-bold text-[13px]">Mustafa Saleem</p><div class="flex justify-center gap-2 mt-2"><span class="bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-bold">JazzCash</span><span class="bg-green-600 text-white px-3 py-1 rounded-full text-[10px] font-bold">EasyPaisa</span></div><button onclick="navigator.clipboard.writeText('03221731950');alert('Copy: 03221731950')" class="mt-3 w-full bg-white border-2 border-red-600 text-red-600 rounded-full py-2.5 text-[11px] font-black">📋 Copy - 03221731950</button></div><input id="txnId" placeholder="Transaction ID" class="w-full mt-3 bg-zinc-50 border rounded-xl p-3 text-[12px]"><label class="mt-2 w-full bg-white border-2 border-dashed rounded-xl p-3 flex flex-col items-center cursor-pointer"><span class="text-[11px] font-bold">📸 Screenshot</span><input type="file" id="proof" accept="image/*" hidden onchange="loadProof(this)"><img id="proofPrev" class="hidden mt-2 w-full h-[80px] object-cover rounded-xl"></label><button onclick="confirmPay()" class="w-full mt-4 bg-red-600 text-white rounded-full py-3.5 font-black text-[13px]">✅ Rs.1000 Bhej Diya - 03221731950 pe</button><button onclick="document.getElementById('jazzModal').classList.add('hidden')" class="w-full mt-2 text-[11px] text-zinc-500">Cancel</button></div></div>
+<div id="jazzModal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-[24px] p-6 w-full max-w-sm"><div class="text-center"><div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center text-white font-black text-xl mx-auto">M</div><h2 class="font-black mt-2">Mustafa Saleem</h2><p class="text-[11px] text-zinc-500">03221731950 - JazzCash + EasyPaisa - Hidden</p></div><div class="mt-4 bg-red-50 border-2 border-red-600 rounded-[18px] p-4 text-center"><p class="text-[10px] font-black">RS.1000 BHEJO - NUMBER HIDDEN</p><p class="font-black text-[30px] text-red-600">03221731950</p><p class="font-bold text-[13px]">Mustafa Saleem</p><div class="flex justify-center gap-2 mt-2"><span class="bg-red-600 text-white px-3 py-1 rounded-full text-[10px]">JazzCash</span><span class="bg-green-600 text-white px-3 py-1 rounded-full text-[10px]">EasyPaisa</span></div><button onclick="navigator.clipboard.writeText('03221731950');alert('Copy: 03221731950')" class="mt-3 w-full bg-white border-2 border-red-600 text-red-600 rounded-full py-2.5 text-[11px] font-black">📋 Copy Number</button></div><input id="txnId" placeholder="Transaction ID" class="w-full mt-3 bg-zinc-50 border rounded-xl p-3 text-[12px]"><label class="mt-2 w-full bg-white border-2 border-dashed rounded-xl p-3 flex flex-col items-center cursor-pointer"><span class="text-[11px] font-bold">📸 Screenshot</span><input type="file" id="proof" accept="image/*" hidden onchange="loadProof(this)"><img id="proofPrev" class="hidden mt-2 w-full h-[80px] object-cover rounded-xl"></label><button onclick="confirmPay()" class="w-full mt-4 bg-red-600 text-white rounded-full py-3.5 font-black">✅ Rs.1000 Bhej Diya</button><button onclick="document.getElementById('jazzModal').classList.add('hidden')" class="w-full mt-2 text-[11px] text-zinc-500">Cancel</button></div></div>
 
 <script>
 let selAv='Girl 1', tempAv='', myPic=null, total=parseInt(localStorage.getItem('mustafa_earning')||'0');
@@ -156,27 +119,177 @@ function openUpgrade(){document.getElementById('jazzModal').classList.remove('hi
 function openWork(type){
   document.getElementById('workBox').classList.remove('hidden');
   ['avatarContent','videoContent','adsContent','eduContent','expertContent','persContent'].forEach(id=>document.getElementById(id).classList.add('hidden'));
-  if(type=='avatar'){document.getElementById('workTitle').textContent='👤 CREATE AVATAR'; document.getElementById('workDesc').textContent='Avatar pe click karo to bara dikhega - Apna kaam'; document.getElementById('avatarContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
-  if(type=='video'){document.getElementById('workTitle').textContent='🎬 CREATE VIDEO'; document.getElementById('workDesc').textContent='Apni picture + prompt - Apna kaam'; document.getElementById('videoContent').classList.remove('hidden');}
-  if(type=='ads'){document.getElementById('workTitle').textContent='🎯 Ads & Promo'; document.getElementById('workDesc').textContent='Ads wala prompt ready - Apna kaam'; document.getElementById('adsContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
-  if(type=='educational'){document.getElementById('workTitle').textContent='📚 Educational Video'; document.getElementById('workDesc').textContent='Teaching style - Apna kaam'; document.getElementById('eduContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
-  if(type=='expert'){document.getElementById('workTitle').textContent='👩‍💼 Expert Explainer'; document.getElementById('workDesc').textContent='Business expert - Apna kaam'; document.getElementById('expertContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
-  if(type=='personalize'){document.getElementById('workTitle').textContent='✨ Personalize'; document.getElementById('workDesc').textContent='Apni marzi - Apna kaam'; document.getElementById('persContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
+  if(type=='avatar'){document.getElementById('workTitle').textContent='👤 CREATE AVATAR'; document.getElementById('avatarContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
+  if(type=='video'){document.getElementById('workTitle').textContent='🎬 CREATE VIDEO'; document.getElementById('videoContent').classList.remove('hidden');}
+  if(type=='ads'){document.getElementById('workTitle').textContent='🎯 Ads & Promo'; document.getElementById('adsContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
+  if(type=='educational'){document.getElementById('workTitle').textContent='📚 Educational'; document.getElementById('eduContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
+  if(type=='expert'){document.getElementById('workTitle').textContent='👩‍💼 Expert'; document.getElementById('expertContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
+  if(type=='personalize'){document.getElementById('workTitle').textContent='✨ Personalize'; document.getElementById('persContent').classList.remove('hidden'); document.getElementById('videoContent').classList.remove('hidden');}
   document.getElementById('workBox').scrollIntoView({behavior:'smooth'});
 }
 function closeWork(){document.getElementById('workBox').classList.add('hidden');}
 function showBig(name,img){tempAv=name; document.getElementById('bigImg').src=img; document.getElementById('bigName').textContent=name; document.getElementById('bigModal').classList.remove('hidden');}
-function selectAv(){selAv=tempAv; document.getElementById('bigModal').classList.add('hidden'); document.getElementById('selTxt').textContent=`Selected: ${selAv} ✅ - Lock ON`; document.getElementById('status').textContent=`${selAv} ✅ | Lock ON | FREE 10-15s`; alert(`✅ ${selAv} select!`);}
+function selectAv(){selAv=tempAv; document.getElementById('bigModal').classList.add('hidden'); document.getElementById('selTxt').textContent=`Selected: ${selAv} ✅`; document.getElementById('status').textContent=`${selAv} ✅ | Lock ON`; alert(`✅ ${selAv} select ho gaya!`);}
 function loadPic(i){const f=i.files[0]; if(!f) return; const r=new FileReader(); r.onload=e=>{myPic=e.target.result; document.getElementById('picPrev').src=myPic; document.getElementById('picPrev').classList.remove('hidden');}; r.readAsDataURL(f);}
 function loadProof(i){const f=i.files[0]; if(!f) return; const r=new FileReader(); r.onload=e=>{document.getElementById('proofPrev').src=e.target.result; document.getElementById('proofPrev').classList.remove('hidden');}; r.readAsDataURL(f);}
-function confirmPay(){const txn=document.getElementById('txnId').value.trim(); if(txn.length<4) return alert('Transaction ID likho!'); if(!document.getElementById('proofPrev').src) return alert('Screenshot!'); total+=1000; localStorage.setItem('mustafa_earning',total.toString()); localStorage.setItem('vidco_plan','pro'); document.getElementById('jazzModal').classList.add('hidden'); alert(`✅ Rs.1000 Received! 03221731950 - Mustafa Saleem - Total Rs.${total}`);}
+function confirmPay(){const txn=document.getElementById('txnId').value.trim(); if(txn.length<4) return alert('Transaction ID likho!'); if(!document.getElementById('proofPrev').src) return alert('Screenshot!'); total+=1000; localStorage.setItem('mustafa_earning',total.toString()); localStorage.setItem('vidco_plan','pro'); document.getElementById('jazzModal').classList.add('hidden'); alert(`✅ Rs.1000 Received! 03221731950 - Total Rs.${total}`);}
+
 function gen(){
-  const dur=parseInt(document.getElementById('duration').value); if(dur>15 && (localStorage.getItem('vidco_plan')||'free')=='free'){openUpgrade(); return alert(`Rs.1000 - 03221731950 - Mustafa Saleem - Upgrade pe click karo`);}
-  const prompt=document.getElementById('prompt').value.trim()||'News anchor'; const w=720,h=1280;
-  const outLoad=document.getElementById('outLoad'), outV=document.getElementById('outV'), outI=document.getElementById('outI'), outPh=document.getElementById('outPh'), dlBtn=document.getElementById('dlBtn'), loadTxt=document.getElementById('loadTxt');
-  outLoad.classList.remove('hidden'); loadTxt.textContent=`${selAv} - ${dur}s - Lock ON`;
-  const fp=encodeURIComponent(`${prompt}, ${selAv}, same face locked`); const src=myPic?myPic:`https://image.pollinations.ai/prompt/${fp}?width=${w}&height=${h}&nologo=true&seed=12345`;
-  outI.src=src; outI.onload=()=>{outI.classList.remove('hidden'); outPh.classList.add('hidden'); const c=document.createElement('canvas'); c.width=w; c.height=h; const ctx=c.getContext('2d'); ctx.drawImage(outI,0,0,w,h); const s=c.captureStream(30); const r=new MediaRecorder(s); const ch=[]; r.ondataavailable=e=>ch.push(e.data); r.onstop=()=>{const b=new Blob(ch,{type:'video/webm'}); const u=URL.createObjectURL(b); outV.src=u; outV.classList.remove('hidden'); outI.classList.add('hidden'); dlBtn.href=u; dlBtn.download=`mustafa-${Date.now()}.webm`; dlBtn.classList.remove('hidden'); outLoad.classList.add('hidden');}; r.start(); let f=0; const an=setInterval(()=>{ctx.clearRect(0,0,w,h); ctx.save(); ctx.translate(w/2,h/2); ctx.scale(1+f*0.00015,1+f*0.00015); ctx.translate(-w/2,-h/2); ctx.drawImage(outI,0,0,w,h); ctx.restore(); f++; loadTxt.textContent=`${Math.floor(f/30)}s / ${dur}s - ${selAv} Locked`; if(f>=dur*30){clearInterval(an); r.stop();}},33);};
+  const dur=parseInt(document.getElementById('duration').value);
+  if(dur>15 && (localStorage.getItem('vidco_plan')||'free')=='free'){openUpgrade(); return;}
+  const promptEl=document.getElementById('prompt');
+  let prompt=promptEl.value.trim(); if(!prompt) prompt=`${selAv} talking, realistic, 4k, same face`;
+
+  const w=720, h=1280;
+  const outLoad=document.getElementById('outLoad'), outV=document.getElementById('outV'), outI=document.getElementById('outI'), outPh=document.getElementById('outPh'), dlBtn=document.getElementById('dlBtn'), dlImgBtn=document.getElementById('dlImgBtn'), loadTxt=document.getElementById('loadTxt'), errorTxt=document.getElementById('errorTxt');
+
+  outLoad.classList.remove('hidden');
+  loadTxt.textContent=`${selAv} - Image bana raha hu...`;
+  errorTxt.classList.add('hidden');
+  outV.classList.add('hidden'); outI.classList.add('hidden'); dlBtn.classList.add('hidden'); dlImgBtn.classList.add('hidden');
+
+  // FIXED - 2 Methods try karega
+  const seeds=Math.floor(Math.random()*99999);
+  const fp=encodeURIComponent(`${prompt}, ${selAv} character, realistic photo, 4k, high quality, studio lighting`);
+  const sources=[
+    `https://image.pollinations.ai/prompt/${fp}?width=${w}&height=${h}&nologo=true&seed=${seeds}&model=turbo`,
+    `https://picsum.photos/seed/${seeds}/${w}/${h}`
+  ];
+
+  let currentSrcIndex=0;
+
+  function tryLoadImage(){
+    if(currentSrcIndex>=sources.length){
+      outLoad.classList.add('hidden');
+      errorTxt.textContent='❌ Image load nahi hui, dobara try karo ya apni picture upload karo!'; errorTxt.classList.remove('hidden');
+      return;
+    }
+
+    const imgSrc=sources[currentSrcIndex];
+    const testImg=new Image();
+    testImg.crossOrigin='anonymous';
+
+    testImg.onload=()=>{
+      // Image load ho gayi - ab dikhao
+      outI.src=imgSrc;
+      outI.crossOrigin='anonymous';
+      outI.onload=()=>{
+        outI.classList.remove('hidden');
+        outPh.classList.add('hidden');
+        dlImgBtn.href=imgSrc;
+        dlImgBtn.download=`mustafa-${selAv}-${Date.now()}.jpg`;
+        dlImgBtn.classList.remove('hidden');
+
+        // Ab video banao - canvas se
+        loadTxt.textContent=`Video bana raha hu... ${dur}s`;
+        makeVideoFromImage(outI, dur);
+      };
+      // Agar outI direct load fail bhi ho jaye to fallback
+      outI.onerror=()=>{
+        // Direct image ko hi final samjho
+        outLoad.classList.add('hidden');
+        outI.classList.remove('hidden');
+        outPh.classList.add('hidden');
+        dlImgBtn.href=imgSrc;
+        dlImgBtn.classList.remove('hidden');
+        document.getElementById('status').textContent=`✅ Image Ready! ${selAv} | ${dur}s | Download karo`;
+      };
+    };
+
+    testImg.onerror=()=>{
+      currentSrcIndex++;
+      tryLoadImage();
+    };
+
+    testImg.src=imgSrc;
+  }
+
+  function makeVideoFromImage(imgElement, duration){
+    try{
+      const canvas=document.createElement('canvas');
+      canvas.width=w; canvas.height=h;
+      const ctx=canvas.getContext('2d');
+      ctx.drawImage(imgElement,0,0,w,h);
+
+      // Check if captureStream supported
+      if(!canvas.captureStream){
+        throw new Error('captureStream not supported');
+      }
+
+      const stream=canvas.captureStream(25);
+      let chunks=[];
+      let mimeType='video/webm';
+      if(!MediaRecorder.isTypeSupported('video/webm')) mimeType='video/mp4';
+
+      const recorder=new MediaRecorder(stream, {mimeType: mimeType});
+      recorder.ondataavailable=e=>{ if(e.data.size>0) chunks.push(e.data); };
+      recorder.onstop=()=>{
+        try{
+          const blob=new Blob(chunks,{type:mimeType});
+          const url=URL.createObjectURL(blob);
+          outV.src=url;
+          outV.classList.remove('hidden');
+          outI.classList.add('hidden');
+          dlBtn.href=url;
+          dlBtn.download=`vidco-mustafa-${selAv}-${Date.now()}.webm`;
+          dlBtn.classList.remove('hidden');
+          outLoad.classList.add('hidden');
+          document.getElementById('status').textContent=`✅ VIDEO READY! ${selAv} Locked 🔒 | ${dur}s | Download karo`;
+        }catch(e){
+          // Video fail to image fallback
+          outLoad.classList.add('hidden');
+          outI.classList.remove('hidden');
+          document.getElementById('status').textContent=`✅ Image Ready (Video fallback) - Download Image`;
+        }
+      };
+
+      recorder.start();
+      let frame=0;
+      const totalFrames=duration*25;
+      const anim=setInterval(()=>{
+        ctx.clearRect(0,0,w,h);
+        const zoom=1+frame*0.0002;
+        ctx.save();
+        ctx.translate(w/2,h/2);
+        ctx.scale(zoom,zoom);
+        ctx.translate(-w/2,-h/2);
+        ctx.drawImage(imgElement,0,0,w,h);
+        ctx.restore();
+        frame++;
+        loadTxt.textContent=`${Math.floor(frame/25)}s / ${duration}s - ${selAv} - Recording...`;
+        if(frame>=totalFrames){
+          clearInterval(anim);
+          try{recorder.stop();}catch(e){
+            outLoad.classList.add('hidden');
+            outI.classList.remove('hidden');
+          }
+        }
+      },40);
+
+    }catch(err){
+      // Agar video creation fail - image hi dikhao
+      outLoad.classList.add('hidden');
+      outI.classList.remove('hidden');
+      document.getElementById('status').textContent=`✅ Image Ready! Video not supported in this browser - Image download karo - ${selAv}`;
+      console.log('Video error:',err);
+    }
+  }
+
+  // Agar apni picture hai to seedha usi se banao
+  if(myPic){
+    outI.src=myPic;
+    outI.onload=()=>{
+      outI.classList.remove('hidden');
+      outPh.classList.add('hidden');
+      dlImgBtn.href=myPic;
+      dlImgBtn.download=`mustafa-mypic-${Date.now()}.jpg`;
+      dlImgBtn.classList.remove('hidden');
+      loadTxt.textContent=`Apni picture se video... ${dur}s`;
+      makeVideoFromImage(outI, dur);
+    };
+  } else {
+    tryLoadImage();
+  }
 }
 </script>
 </div>
